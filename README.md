@@ -4,13 +4,13 @@ This is the open-source repository for the paper 《**LRSCLIP: A Vision-Language
 
 Weizhi Chen, Jingbo Chen, Yupeng Deng*, Jiansheng Chen*, Yuman Feng, Zhihao Xi, Diyou Liu, Kai Li, Yu Meng
 
-## Highlights ✨
+## ✨ Highlights ✨
 
 * 🔥LRSCLIP is the first vision-language foundation model in the remote sensing domain that can simultaneously handle both long and short texts.
 * 🔥LRS2M is the first image-text dataset in the remote sensingdomain with 2 million data points that simultaneously provides both long and short text captions for images.
 * 🔥LRSCLIP achieves SOTA performance in four zero-shot downstream tasks: long-text cross-modal retrieval, short-text cross-modal retrieval, image classification, and semantic localization.
 
-## Usage 💻
+## 💻 Usage 💻
 
 ### Installation
 
@@ -50,12 +50,13 @@ print("Label probs:", probs)
 ```
 
 
-## Todo 📝
+## 📝 Todo 📝
 - [x] Release the [paper](http://arxiv.org/abs/2503.19311) on arXiv.
 - [x] LRSCLIP's checkpoints([LRSCLIP_ViT-B-16](https://huggingface.co/cwz14/LRSCLIP_ViT-B-16) and [LRSCLIP_ViT-L-14](https://huggingface.co/cwz14/LRSCLIP_ViT-L-14)) and usage demo.
+- [ ] The training dataset LRS2M for LRSCLIP.
 - [ ] The evaluation code for the LRSCLIP.
 
-## Citation 📖
+## 📖 Citation 📖
 
 If you find our work helpful for your research, please consider giving a citation:
 
