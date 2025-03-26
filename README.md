@@ -25,7 +25,7 @@ git clone https://github.com/MitsuiChen14/LRSCLIP.git
 cd LRSCLIP
 ```
 
-Then, download the [LRSCLIP-B/16](https://huggingface.co/cwz14/LRSCLIP_ViT-B-16) checkpoint and place them in the `./checkpoints` directory.
+Then, download the [LRSCLIP_ViT-B-16](https://huggingface.co/cwz14/LRSCLIP_ViT-B-16) checkpoint and place them in the `./checkpoints` directory.
 
 ### Demo
 ```python
