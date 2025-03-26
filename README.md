@@ -16,7 +16,7 @@ Weizhi Chen, Jingbo Chen, Yupeng Deng*, Jiansheng Chen*, Yuman Feng, Zhihao Xi, 
 
 Our model is based on [Long-CLIP](https://github.com/beichenzbc/Long-CLIP), please prepare environment for CLIP.
 
-### how to sue
+### How to sue
 
 Please first clone our [repo](https://github.com/MitsuiChen14/LRSCLIP) from github by running the following command.
 
@@ -34,10 +34,10 @@ import torch
 from PIL import Image
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, preprocess = longclip.load("./checkpoints/longclip-B.pt", device=device)
+model, preprocess = longclip.load("./checkpoints/LRSCLIP_ViT-B-16.pt", device=device)
 
 text = longclip.tokenize(["Numerous students are walking in the green pass in this campus.", "These buildings belong to the school buildings.", "There are many residential areas near the school."]).to(device)
-image = preprocess(Image.open("./img/demo.png")).unsqueeze(0).to(device)
+image = preprocess(Image.open("./img/demo.jpg")).unsqueeze(0).to(device)
 
 with torch.no_grad():
     image_features = model.encode_image(image)
