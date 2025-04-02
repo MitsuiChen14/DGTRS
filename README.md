@@ -61,16 +61,11 @@ print("Label probs:", probs)
 If you find our work helpful for your research, please consider giving a citation:
 
 ```
-@article{chen2025lrsclipvisionlanguagefoundationmodel,
-      title={LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text}, 
-      author={Weizhi Chen and Jingbo Chen and Yupeng Deng and Jiansheng Chen and Yuman Feng and Zhihao Xi and Diyou Liu and Kai Li and Yu Meng},
-      year={2025},
-      eprint={2503.19311},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.19311}, 
-      journal={ArXiv},
-      volume={abs/2503.19311},
+@article{chen2025lrsclip,
+  title={LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text},
+  author={Chen, Weizhi and Chen, Jingbo and Deng, Yupeng and Chen, Jiansheng and Feng, Yuman and Xi, Zhihao and Liu, Diyou and Li, Kai and Meng, Yu},
+  journal={arXiv preprint arXiv:2503.19311},
+  year={2025}
 }
 ```
 
