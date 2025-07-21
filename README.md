@@ -52,7 +52,7 @@ print("Label probs:", probs)
 
 ## 📝 Todo 📝
 - [x] Release the [paper](http://arxiv.org/abs/2503.19311) on arXiv.
-- [x] LRSCLIP's checkpoints([LRSCLIP_ViT-B-16](https://huggingface.co/cwz14/LRSCLIP_ViT-B-16) and [LRSCLIP_ViT-L-14](https://huggingface.co/cwz14/LRSCLIP_ViT-L-14)) and usage demo.
+- [x] LRSCLIP's checkpoints([DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16) and [DGTRS-CLIP-ViT-L-14](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-L-14)) and usage demo.
 - [ ] The training dataset LRS2M for LRSCLIP.
 - [ ] The evaluation code for the LRSCLIP.
 
