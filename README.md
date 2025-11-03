@@ -62,8 +62,8 @@ If you find our work helpful for your research, please consider giving a citatio
 
 ```
 @article{chen2025lrsclip,
-  title={LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text},
-  author={Chen, Weizhi and Chen, Jingbo and Deng, Yupeng and Chen, Jiansheng and Feng, Yuman and Xi, Zhihao and Liu, Diyou and Li, Kai and Meng, Yu},
+  title={DGTRS-CLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text},
+  author={Chen, Weizhi and Wei, Jin and Deng, Yupeng and Chen, Jingbo and Chen, Jiansheng and Feng, Yuman and Xi, Zhihao and Liu, Diyou and Li, Kai and Meng, Yu},
   journal={arXiv preprint arXiv:2503.19311},
   year={2025}
 }
