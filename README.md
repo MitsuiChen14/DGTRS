@@ -1,66 +1,86 @@
 # DGTRS 🚀
 
-This is the open-source repository for the paper 《**DGTRSD & DGTRS-CLIP: A Dual-Granularity Remote Sensing Image–Text Dataset and Vision Language Foundation Model for Alignment**》.
+This is the open-source repository for the paper 《**DGTRSD & DGTRS-CLIP: A Dual-Granularity Remote Sensing Image-Text Dataset and Vision Language Foundation Model for Alignment**》.
 
 Weizhi Chen, Jin Wei, Yupeng Deng*, Jingbo Chen, Jiansheng Chen*, Yuman Feng, Zhihao Xi, Diyou Liu, Kai Li, Yu Meng
 
 ## ✨ Highlights ✨
 
-* 🔥DGTRS-CLIP is the first vision-language foundation model in the remote sensing domain that can simultaneously handle both long and short texts.
-* 🔥DGTRSD is the first image-text dataset in the remote sensingdomain with 2 million data points that simultaneously provides both long and short text captions for images.
-* 🔥DGTRS-CLIP achieves SOTA performance in four zero-shot downstream tasks: long-text cross-modal retrieval, short-text cross-modal retrieval, image classification, and semantic localization.
+* 🔥 DGTRS-CLIP is the first vision-language foundation model in the remote sensing domain that can simultaneously handle both long and short texts.
+* 🔥 DGTRSD is the first image-text dataset in the remote sensing domain with 2 million data points that simultaneously provides both long and short text captions for images.
+* 🔥 DGTRS-CLIP achieves SOTA performance in four zero-shot downstream tasks: long-text cross-modal retrieval, short-text cross-modal retrieval, image classification, and semantic localization.
+
+## 📦 Dataset 📦
+
+The DGTRSD training dataset is released on ModelScope:
+
+👉 [DGTRSD on ModelScope](https://www.modelscope.cn/datasets/MitsuiChen14/DGTRSD)
+
+After downloading all split archives, reconstruct and extract the dataset with:
+
+```bash
+cat DGTRSD_part.tar.gz.* > DGTRSD.tar.gz
+tar -xzf DGTRSD.tar.gz
+```
+
+The caption annotation files are also provided in the `caption_json/` folder of the ModelScope dataset repository.
 
 ## 💻 Usage 💻
 
 ### Installation
 
-Our model is based on [Long-CLIP](https://github.com/beichenzbc/Long-CLIP), please prepare environment for CLIP.
+Our model is based on [Long-CLIP](https://github.com/beichenzbc/Long-CLIP), please prepare the CLIP environment first.
 
-### How to sue
+### How to use
 
-Please first clone our [repo](https://github.com/MitsuiChen14/DGTRS.git) from github by running the following command.
+Please first clone our [repo](https://github.com/MitsuiChen14/DGTRS.git) from GitHub by running the following command:
 
 ```shell
 git clone https://github.com/MitsuiChen14/DGTRS.git
 cd DGTRS
 ```
 
-Then, download the [DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16)checkpoint and place them in the `./checkpoints` directory.
+Then, download the [DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16) checkpoint and place it in the `./checkpoints` directory.
 
 ### Demo
+
 ```python
 from model import longclip
 import torch
 from PIL import Image
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, preprocess = longclip.load("./checkpoints/DGTRS-CLIP-ViT-B-16, device=device)
+model, preprocess = longclip.load("./checkpoints/DGTRS-CLIP-ViT-B-16", device=device)
 
-text = longclip.tokenize(["Numerous students are walking in the green pass in this campus.", "These buildings belong to the school buildings.", "There are many residential areas near the school."]).to(device)
+text = longclip.tokenize([
+    "Numerous students are walking in the green pass in this campus.",
+    "These buildings belong to the school buildings.",
+    "There are many residential areas near the school.",
+]).to(device)
 image = preprocess(Image.open("./img/demo.jpg")).unsqueeze(0).to(device)
 
 with torch.no_grad():
     image_features = model.encode_image(image)
     text_features = model.encode_text(text)
-    
+
     logits_per_image = image_features @ text_features.T
     probs = logits_per_image.softmax(dim=-1).cpu().numpy()
 
-print("Label probs:", probs) 
+print("Label probs:", probs)
 ```
 
-
 ## 📝 Todo 📝
+
 - [x] Release the [paper](http://arxiv.org/abs/2503.19311) on arXiv.
-- [x] LRSCLIP's checkpoints([DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16) and [DGTRS-CLIP-ViT-L-14](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-L-14)) and usage demo.
-- [ ] The training dataset DGTRSD for DGTRS-CLIP.
+- [x] LRSCLIP's checkpoints ([DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16) and [DGTRS-CLIP-ViT-L-14](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-L-14)) and usage demo.
+- [x] The training dataset [DGTRSD](https://www.modelscope.cn/datasets/MitsuiChen14/DGTRSD) for DGTRS-CLIP.
 - [ ] The evaluation code for the DGTRS-CLIP.
 
 ## 📖 Citation 📖
 
 If you find our work helpful for your research, please consider giving a citation:
 
-```
+```bibtex
 @article{chen2025lrsclip,
   title={LRSCLIP: A Vision-Language Foundation Model for Aligning Remote Sensing Image with Longer Text},
   author={Chen, Weizhi and Chen, Jingbo and Deng, Yupeng and Chen, Jiansheng and Feng, Yuman and Xi, Zhihao and Liu, Diyou and Li, Kai and Meng, Yu},
@@ -68,12 +88,3 @@ If you find our work helpful for your research, please consider giving a citatio
   year={2025}
 }
 ```
-
-
-
-
-
-
-
-
-
