@@ -74,7 +74,6 @@ print("Label probs:", probs)
 - [x] Release the [paper](http://arxiv.org/abs/2503.19311) on arXiv.
 - [x] LRSCLIP's checkpoints ([DGTRS-CLIP-ViT-B-16](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-B-16) and [DGTRS-CLIP-ViT-L-14](https://huggingface.co/MitsuiChen14/DGTRS-CLIP-ViT-L-14)) and usage demo.
 - [x] The training dataset [DGTRSD](https://www.modelscope.cn/datasets/MitsuiChen14/DGTRSD) for DGTRS-CLIP.
-- [ ] The evaluation code for the DGTRS-CLIP.
 
 ## 📖 Citation 📖
 
