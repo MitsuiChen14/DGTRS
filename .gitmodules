@@ -1,0 +1,11 @@
+[submodule "libs/CLIP-fine-tune"]
+	path = libs/CLIP-fine-tune
+	url = https://github.com/zer0int/CLIP-fine-tune
+
+[submodule "libs/CLIP-fine-tune-registers-gated"]
+	path = libs/CLIP-fine-tune-registers-gated
+	url = https://github.com/zer0int/CLIP-fine-tune-registers-gated
+
+[submodule "libs/Long-CLIP"]
+	path = libs/Long-CLIP
+	url = https://github.com/beichenzbc/Long-CLIP
